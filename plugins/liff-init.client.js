@@ -13,11 +13,9 @@ export default (context, inject) => {
   const initResult = liff
     .init({ liffId: process.env.LIFF_ID })
     .then(() => {
-      // if (!liff.isLoggedIn()) {
-      //   liff.login();
-      // }
-
-      console.log('liff.init() done');
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
     })
     .catch((error) => {
       console.log(`liff.init() failed: ${error}`);

@@ -46,15 +46,9 @@
       <a class="home__buttons__button button--secondary" @click.prevent="goToLink">
         open google link
       </a>
-      <a class="home__buttons__button button--secondary" @click.prevent="sendHello">
-        send hello!
-      </a>
-      <a class="home__buttons__button button--secondary" @click.prevent="sendHelloToFriend">
-        分享 hello world 給朋友
-      </a>
-      <a class="home__buttons__button button--secondary" @click.prevent="closeLiffApp">
-        關閉 liff app
-      </a>
+      <nuxt-link class="home__buttons__button button--secondary" to="/userInfo">
+        用戶資訊
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -235,13 +229,10 @@ export default {
     //   .catch((error) => {
     //     this.liffError = error;
     //   });
-
-    console.log('用戶資訊');
-    console.log(this.$liff.getDecodedIDToken());
-    this.$liff.getFriendship().then((data) => {
-      console.log(data);
-    });
-
+    // console.log(this.$liff.getDecodedIDToken());
+    // this.$liff.getFriendship().then((data) => {
+    //   console.log(data);
+    // });
     // console.log(this.$liff.getIDToken());
   },
   methods: {
